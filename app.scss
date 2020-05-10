@@ -39,7 +39,18 @@ a {
 .hidden {
     display: none;
 }
-
+.category {
+    font-size: 10px;
+    background: #333;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    margin-right: 0.5rem;
+    border-radius: 20px;
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.7;
+}
 // Buttons //
 input[type="submit"],
 button {
@@ -153,15 +164,5 @@ button {
     .categories {
         display: flex;
         margin: 1rem 0;
-    }
-    .category {
-        font-weight: bold;
-        padding: 5px;
-        border-radius: 4px;
-        font-size: 10px;
-        background-color: $p-color;
-        color: $s-color;
-        opacity: 0.8;
-        margin: 0 0.2rem 0 0;
     }
 }
