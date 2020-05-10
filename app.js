@@ -7,6 +7,7 @@ const addLinkPanel = document.querySelector('#addLinkPanel');
 let addedCategories = document.querySelector('#addedCategories');
 
 const linksList = document.querySelector('#linksList');
+const linkSaver = document.querySelector('#linkSaver');
 
 const addLinkContainer = document.querySelector('#addLinkContainer');
 let editIndex = -1;
@@ -17,16 +18,19 @@ let links = [
     title: 'New Link 1',
     url: 'url1.com',
     categories: ['node', 'angular'],
+    date: new Date(),
   },
   {
     title: 'New Link 2',
     url: 'url2.com',
     categories: ['js', 'angular'],
+    date: new Date(),
   },
   {
     title: 'New Link 3',
     url: 'url3.com',
     categories: ['react', 'angular'],
+    date: new Date(),
   },
 ];
 
@@ -45,10 +49,12 @@ cancelBtn.addEventListener('click', (event) => {
 
 function showFormPanel() {
   addLinkContainer.classList.remove('hidden');
+  linkSaver.classList.add('over-hide');
   displayLinkCategories();
 }
 function hideFormPanel() {
   addLinkContainer.classList.add('hidden');
+  linkSaver.classList.remove('over-hide');
   clearLinkForm();
 }
 
@@ -96,6 +102,7 @@ submitButton.addEventListener('click', (event) => {
     title: title,
     url: url,
     categories: categories,
+    date: new Date(),
 
     // ES6 syntax for above object key value assinment can be easily done like below
 
@@ -132,7 +139,7 @@ function displayLinks() {
         <a href='${link.url}'>
           <h1 class='link-header'>${link.title}</h1>
         </a>
-        <p class='link-date'>${Date.now()}</p>
+        <p class='link-date'>${formatDate(link.date)}</p>
 
         <div class='categories'>
         `;
@@ -160,4 +167,10 @@ function editLink(index) {
   linkCategories = links[index].categories;
 
   showFormPanel();
+}
+
+function formatDate(date) {
+  return `${('0' + (date.getMonth() + 1)).slice(-2)}/${(
+    '0' + date.getDate()
+  ).slice(-2)}/${date.getFullYear()}`;
 }
