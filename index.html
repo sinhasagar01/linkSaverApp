@@ -29,38 +29,40 @@
     </nav>
 
     <div class="container">
-      <div class="panel hidden" id="addLinkPanel">
-        <h3 class="panel-heading">Add Link</h3>
-        <form id="addLinkForm">
-          <input
-            type="text"
-            name="title"
-            id="linkTitle"
-            class="form-control"
-            placeholder="Title"
-          />
-          <input
-            type="text"
-            name="url"
-            id="linkUrl"
-            class="form-control"
-            placeholder="URL"
-          />
-          <input
-            type="text"
-            name="category"
-            id="linkCategory"
-            class="form-control"
-            placeholder="Categories (comma separated)"
-          />
+      <div id="addLinkContainer" class="full-screen hidden">
+        <div class="panel" id="addLinkPanel">
+          <h3 class="panel-heading">Add Link</h3>
+          <form id="addLinkForm">
+            <input
+              type="text"
+              name="title"
+              id="linkTitle"
+              class="form-control"
+              placeholder="Title"
+            />
+            <input
+              type="text"
+              name="url"
+              id="linkUrl"
+              class="form-control"
+              placeholder="URL"
+            />
+            <input
+              type="text"
+              name="category"
+              id="linkCategory"
+              class="form-control"
+              placeholder="Categories (comma separated)"
+            />
 
-          <div id="addedCategories"></div>
+            <div id="addedCategories"></div>
 
-          <div class="cta">
-            <input type="submit" id="cancelButton" value="Cancel" />
-            <input type="submit" id="submitButton" value="Submit" />
-          </div>
-        </form>
+            <div class="cta">
+              <input type="submit" id="cancelButton" value="Cancel" />
+              <input type="submit" id="submitButton" value="Submit" />
+            </div>
+          </form>
+        </div>
       </div>
 
       <div id="linksList"></div>
