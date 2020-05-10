@@ -53,7 +53,7 @@ function hideFormPanel() {
 }
 
 linkCategory.addEventListener('keydown', function (event) {
-  if (event.keyCode === 32 || event.keyCode === 229) {
+  if (event.keyCode === 13) {
     event.preventDefault();
 
     linkCategories.push(linkCategory.value);
