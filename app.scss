@@ -34,34 +34,62 @@ a {
 .container {
     display: grid;
     grid-template-columns: 1fr minmax(auto, 1105px) 1fr;
-    background-color: $p-color;
+    padding-top: 5rem;
 }
 .hidden {
     display: none;
 }
+
+// Buttons //
+input[type="submit"],
+button {
+    padding: 6px 22px;
+    border-radius: 4px;
+    border: 1px solid $p-color;
+    background-color: $p-color;
+    color: $s-color;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+
+    &:hover {
+        cursor: pointer;
+        color: $p-color;
+        background-color: $s-color;
+    }
+}
+.btn-sm {
+    font-size: 10px;
+    padding: 5px 10px;
+    margin: 0;
+}
+
 // Navbar //
 
 #nav {
     height: 60px;
-    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1105px) 1fr;
+    justify-content: center;
+    align-items: center;
+    background: #5168ec;
+    height: 60px;
 
-    %navCommon {
-        color: $s-color;
-        grid-column: 2 / 3;
-        grid-row: 1 / 1;
-        align-self: center;
-    }
-    h1 {
-        @extend %navCommon;
-        justify-self: start;
-    }
-    a {
-        @extend %navCommon;
-        justify-self: end;
-        font-size: 2rem;
+    #navContainer {
+        grid-column: 2;
+        display: flex;
+        justify-content: space-between;
 
-        &:after {
-            content: "+";
+        h1 {
+            color: $s-color;
+            align-self: center;
+        }
+        a {
+            color: $s-color;
+            font-size: 2rem;
+
+            &:after {
+                content: "+";
+            }
         }
     }
 }
@@ -73,6 +101,7 @@ a {
     border-radius: 4px;
     box-shadow: 0 16px 32px 0 rgba(23, 43, 77, 0.08);
     padding: 2rem;
+    // grid-column: 2;
 
     .panel-heading {
         font-size: 1.2rem;
@@ -100,21 +129,39 @@ a {
         display: flex;
         justify-content: space-between;
     }
-    // Buttons //
-    input[type="submit"],
-    button {
-        padding: 6px 22px;
+}
+
+// Link
+#linksList {
+    grid-column: 2;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+.link {
+    position: relative;
+
+    .link-options {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+    .link-date {
+        font-size: 14px;
+        font-style: italic;
+    }
+    .categories {
+        display: flex;
+        margin: 1rem 0;
+    }
+    .category {
+        font-weight: bold;
+        padding: 5px;
         border-radius: 4px;
-        border: 1px solid $p-color;
+        font-size: 10px;
         background-color: $p-color;
         color: $s-color;
-        font-size: 0.8rem;
-        margin-top: 1.5rem;
-
-        &:hover {
-            cursor: pointer;
-            color: $p-color;
-            background-color: $s-color;
-        }
+        opacity: 0.8;
+        margin: 0 0.2rem 0 0;
     }
 }
