@@ -158,6 +158,7 @@ button {
         &:hover,
         &:focus {
             border: 1px solid $p-color;
+            outline: none;
         }
         &:not(:placeholder-shown) {
             border: 1px solid $p-color;
