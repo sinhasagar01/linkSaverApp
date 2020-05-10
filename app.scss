@@ -66,6 +66,13 @@ a {
     font-weight: 600;
     opacity: 0.7;
 }
+.nav-header {
+    display: flex;
+    img {
+        max-width: 30px;
+        margin-right: 1rem;
+    }
+}
 // Buttons //
 input[type="submit"],
 button {
