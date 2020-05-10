@@ -112,6 +112,10 @@ button {
         display: flex;
         justify-content: space-between;
 
+        @media screen and (max-width: 768px) {
+            padding: 0 1rem;
+        }
+
         h1 {
             color: $s-color;
             align-self: center;
