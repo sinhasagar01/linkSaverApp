@@ -2,6 +2,7 @@ const linkCategory = document.querySelector('#linkCategory');
 const submitButton = document.querySelector('#submitButton');
 
 let linkCategories = [];
+let links = [];
 
 linkCategory.addEventListener('keydown', function (event) {
   if (event.keyCode === 188) {
@@ -22,15 +23,32 @@ function displayLinkCategories() {
 }
 
 submitButton.addEventListener('click', (event) => {
-  const title = linkTitle.value;
-  const url = linkUrl.value;
-  const categories = linkCategories;
+  // stop form from submitting
+  event.preventDefault();
+
+  let title = linkTitle.value;
+  let url = linkUrl.value;
+  let categories = linkCategories;
 
   const newLink = {
-    title,
-    url,
-    categories,
+    title: title,
+    url: url,
+    categories: categories,
+
+    // ES6 syntax for above object key value assinment can be easily done like below
+
+    // title,
+    // url,
+    // categories
   };
-  console.log(newLink);
-  event.preventDefault();
+
+  // push links to array
+  links.push(newLink);
+
+  // Empty out the form
+  linkTitle.value = '';
+  linkUrl.value = '';
+  linkCategories = [];
+
+  displayLinkCategories();
 });
