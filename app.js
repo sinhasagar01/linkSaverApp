@@ -3,10 +3,12 @@ const submitButton = document.querySelector('#submitButton');
 const addBtn = document.querySelector('#addBtn');
 const cancelBtn = document.querySelector('#cancelButton');
 const addLinkPanel = document.querySelector('#addLinkPanel');
+
 let addedCategories = document.querySelector('#addedCategories');
 
 const linksList = document.querySelector('#linksList');
 
+const addLinkContainer = document.querySelector('#addLinkContainer');
 let editIndex = -1;
 
 let linkCategories = [];
@@ -42,11 +44,11 @@ cancelBtn.addEventListener('click', (event) => {
 });
 
 function showFormPanel() {
-  addLinkPanel.classList.remove('hidden');
+  addLinkContainer.classList.remove('hidden');
   displayLinkCategories();
 }
 function hideFormPanel() {
-  addLinkPanel.classList.add('hidden');
+  addLinkContainer.classList.add('hidden');
   clearLinkForm();
 }
 

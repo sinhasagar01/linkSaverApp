@@ -34,9 +34,24 @@ a {
 .container {
     display: grid;
     grid-template-columns: 1fr minmax(auto, 1105px) 1fr;
-    padding-top: 5rem;
+    padding: 5rem 1rem;
 }
-.hidden {
+
+.full-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+#addLinkContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#addLinkContainer.hidden {
     display: none;
 }
 .category {
