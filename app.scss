@@ -36,6 +36,9 @@ a {
     grid-template-columns: 1fr minmax(auto, 1105px) 1fr;
     background-color: $p-color;
 }
+.hidden {
+    display: none;
+}
 // Navbar //
 
 #nav {
